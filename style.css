@@ -1,0 +1,37 @@
+.body{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 15em;
+}
+
+#new-game-button{
+        margin-top: 2em;
+        border-radius: 8px; 
+        font-size: 18px; 
+              
+}
+
+#hit-button{
+    border-radius: 8px;
+    font-size: 18px;        
+}
+
+#stay-button{
+    border-radius: 8px;        
+    font-size: 18px;
+}
+
+.header{
+    padding-top: 14px;
+    margin: 14px;  
+    font-size: 20px;  
+}
+
+#text-area{    
+    text-align: center;
+}
+
+#main-footer{
+    padding: 2em;
+}
