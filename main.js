@@ -13,7 +13,6 @@ let deck = [];
 let playerCards = [],
     dealerCards = [];
 
-
 function createDeck(){    
     for(suitsIdx = 0 ; suitsIdx < suits.length ; suitsIdx++){
         for(valuesIdx = 0 ; valuesIdx < values.length ; valuesIdx++){
