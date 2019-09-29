@@ -57,6 +57,12 @@ function showStatus(){
             hitButton.style.display = 'none';
             stayButton.style.display = 'none';                   
         }
+        else if(dealerScore == 21 || playerScore == 21)
+        {
+            textArea.innerText += '\n\n' + ' BLACK JACK'
+            dealerScore == 21? textArea.innerText += '\n\n' + 'DEALER WINS' : null
+            playerScore == 21? textArea.innerText += '\n\n' + 'PLAYER WINS' : null
+        }
 }
 
 hitButton.addEventListener('click', function(){
@@ -67,7 +73,7 @@ hitButton.addEventListener('click', function(){
 stayButton.addEventListener('click', function(){
     let dealerScore = getDealerCardsScore(dealerCards),
         playerScore = getPlayerCardsScore(playerCards);
-    if(playerScore > dealerScore){
+    if(playerScore >= dealerScore){
         dealerCards.push(getNextCard(deck));    
     }    
     showStatus();

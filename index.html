@@ -1,38 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href ="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
+
+    <title>Blackjack</title>
 </head>
+
 <body class="body">
-    <header class="header">
-        <h1 id="header-heading">Blackjack</h1>
-    </header>
-    <section >        
-        <div id="title-area">
-            <h1 id="titleArea">Let's Start!</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <i class="fab fa-studiovinari"> </i>
+        <a class="navbar-brand" href="#">BJ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-        <div class="textAreaClass">
-            <h4 id="text-area"></h4>            
-        </div>       
-        <div id="primary-button">
-            <button id ="new-game-button">New Game</button>
-            <button id ="hit-button">Hit</button>
-            <button id ="stay-button">Stay</button>
+    </nav>
+    <div id="container">
+        <div id="left">
+            <h4>Instructions : </h4>
+            <ul>
+                <li>
+                    <p>Press New Game to start the game</p>
+                </li>
+                <li>
+                    <p>Press Hit to take the next card</p>
+                </li>
+                <li>
+                    <p>Press Stay to stay with your cards</p>
+                </li>
+            </ul>
+            <footer id="main-footer">
+                <div>
+                    <p>Copy right &copy, Rights Reserved </p>
+                </div>
+            </footer>
         </div>
-        <div>
-            <h4 id="player-result"></h4>
-            <h4 id="dealer-result"></h4>
-        </div>                
-    </section>
-    <footer id="main-footer">
-        <div>
-            <p>Copy right &copy, Rights Reserved </p>
-        </div>        
-    </footer>    
+        <div id="wrapper">
+            <header class="header">
+                <i id="logo" class="fab fa-studiovinari"></i>
+                <h1 id="header-heading">Blackjack</h1>
+            </header>
+            <div id="right">
+                <section>
+                    <div id="title-area">
+                        <h1 id="titleArea">Let's Start!</h1>
+                    </div>
+                    <div class="textAreaClass">
+                        <h4 id="text-area"></h4>
+                    </div>
+                    <div id="primary-button">
+                        <button type="button" id="new-game-button" class="btn btn-outline-success">New Game</button>
+                        <button type="button" id="hit-button" class="btn btn-outline-success">Hit!</button>
+                        <button type="button" id="stay-button" class="btn btn-outline-success">Stay</button>
+                    </div>
+                    <div>
+                        <h4 id="player-result"></h4>
+                        <h4 id="dealer-result"></h4>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-footer">
+
+    </div>
+
     <script src="main.js"></script>
 </body>
+
 </html>
