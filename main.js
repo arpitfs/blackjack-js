@@ -40,12 +40,38 @@ newGameButton.addEventListener('click', function(){
 });
 
 function showStatus(){
-       textArea.innerText = 'Dealers Cards: \n' + getDealerCards(dealerCards) + 'Score : ' + getDealerCardsScore(dealerCards) + '\n \n' +
-                            'Players Cards: \n' + getPlayerCards(playerCards) + 'Score : '  + getPlayerCardsScore(playerCards);
+    let dealerScore = getDealerCardsScore(dealerCards),
+        playerScore = getPlayerCardsScore(playerCards);       
+
+        textArea.innerText = 'Dealers Cards: \n' + getDealerCards(dealerCards) + 'Score : ' + getDealerCardsScore(dealerCards) + '\n \n' +
+                             'Players Cards: \n' + getPlayerCards(playerCards) + 'Score : ' + getPlayerCardsScore(playerCards);                                
+
+        if(dealerScore > 21){
+            textArea.innerText += '\n\n' + ' PLAYER WINS'  
+            newGameButton.style.display = 'inline';
+            hitButton.style.display = 'none';
+            stayButton.style.display = 'none';
+        }                     
+        else if (playerScore > 21){
+            textArea.innerText += '\n\n' + ' DEALER WINS'   
+            newGameButton.style.display = 'inline';
+            hitButton.style.display = 'none';
+            stayButton.style.display = 'none';                   
+        }
 }
 
 hitButton.addEventListener('click', function(){
-      
+    playerCards.push(getNextCard(deck));    
+    showStatus();
+});
+
+stayButton.addEventListener('click', function(){
+    let dealerScore = getDealerCardsScore(dealerCards),
+        playerScore = getPlayerCardsScore(playerCards);
+    if(playerScore > dealerScore){
+        dealerCards.push(getNextCard(deck));    
+    }    
+    showStatus();
 });
 
 function getDealerCardsScore(dealerCards){  
@@ -103,8 +129,4 @@ function shuffleCards(array) {
     return array;
 }
 
-function valueOfCard(card){
-    //console.log( cardDic[card.value]);
-    return cardDic[card.value];    
-}
 
